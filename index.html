@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chris Manuel | Développeur Full-Stack</title>
+    <meta name="description" content="Portfolio de Chris Manuel — Développeur Full-Stack et étudiant en Génie Informatique">
+
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Portfolio — Chris Manuel">
+    <meta property="og:description" content="Développeur Full-Stack | Projets, compétences et contact">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="icon" href="images/profil.jpg">
+    <title>Chris Manuel | Développeur Full-Stack</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+</head>
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">CM</div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À Propos</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Salut, je suis Chris.</h1>
+                <p class="hero-subtitle">
+                    Développeur Full-Stack & Étudiant en Génie Informatique.
+                    <br><br>
+                    <strong>Je donne vie à vos idées</strong> en construisant des applications web rapides, robustes et centrées sur l'utilisateur.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Discutons</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="images/profil3.jpg" alt="Photo de profil - Chris Manuel">
+            </div>
+        </section>
+
+        <!-- ========== PROJETS ========== -->
+        <section id="projects" class="section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Projets Phares</h2>
+                </div>
+                <div class="projects-container">
+                    <!-- PROJET 1 -->
+                    <div class="project-item">
+                        <div class="project-visual">
+                            <div class="project-visual-placeholder">
+                                <img src="images/dashboard.avif" alt="Dashboard de Gestion">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">Projet 01</span>
+                            <h3 class="project-title">Dashboard de Gestion</h3>
+                            <p class="project-description">
+                                Application de gestion en temps réel avec visualisations de données avancées. Architecture complète front/back avec authentification et base de données SQL optimisée.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                            <a href="#" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 2 -->
+                    <div class="project-item">
+                        <div class="project-visual">
+                            <div class="project-visual-placeholder">
+                                <img src="images/Gestion.png" alt="Gestion des Étudiants">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">Projet 02</span>
+                            <h3 class="project-title">Gestion des Étudiants</h3>
+                            <p class="project-description">
+                                Plateforme académique pour centraliser les dossiers étudiants. Système de permissions avancé, rapports d'analyse détaillés et interface intuitive.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML & CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <a href="https://chris-manuelpipo.github.io/AppGestionEtudiants/welcome/Welcome.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 3 -->
+                    <div class="project-item">
+                        <div class="project-visual">
+                            <div class="project-visual-placeholder">
+                                <img src="images/publication.avif" alt="Modèle de Publication">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">Projet 03</span>
+                            <h3 class="project-title">Modèle de Publication</h3>
+                            <p class="project-description">
+                                Système de publication de ressources éducatives avec recherche avancée, catégorisation intelligente et système de favoris.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">C++</span>
+                                <span class="tech-badge">QT</span>
+                            </div>
+                            <a href="#" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 4 -->
+                    <div class="project-item">
+                        <div class="project-visual">
+                            <div class="project-visual-placeholder">
+                                <img src="images/billet.png" alt="Générateur de Billets">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">Projet 04</span>
+                            <h3 class="project-title">Générateur de Billets</h3>
+                            <p class="project-description">
+                                Outil automatisé pour générer et personnaliser des billets d'invitation. Intégration d'images, QR codes, support multi-format.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Shell</span>
+                                <span class="tech-badge">Latex</span>
+                            </div>
+                            <a href="#" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 5 -->
+                    <div class="project-item">
+                        <div class="project-visual">
+                            <div class="project-visual-placeholder">
+                                <img src="images/Chatbot.jpg" alt="Chatbot Intelligent">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-number">Projet 05</span>
+                            <h3 class="project-title">Chatbot Intelligent</h3>
+                            <p class="project-description">
+                                Agent conversationnel avec traitement du langage naturel avancé. Capable d'apprendre des interactions et s'adapter au contexte utilisateur.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">HTML & CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <a href="https://chris-manuelpipo.github.io/Chat-bruti/" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== À PROPOS ========== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>À Propos</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Je suis un développeur passionné avec une expertise en <span class="about-highlight">Full-Stack</span>, en cours d'apprentissage en <span class="about-highlight">DevOps et Data Science</span>.
+                        </p>
+                        <p>
+                            Je crois qu'un bon logiciel est comme un bon moteur : il doit être <span class="about-highlight">fiable, efficace et bien conçu</span>. C'est pourquoi je suis obsédé par la qualité du code, l'UX fluide et les performances mesurables.
+                        </p>
+                        <p>
+                            Mon approche est guidée par trois principes : <span class="about-highlight">l'esprit d'équipe, la créativité et le respect</span>. Je m'engage à livrer des solutions qui dépassent les attentes.
+                        </p>
+                    </div>
+                    <div class="about-figure">
+                        <img src="images/profil2.jpg" alt="Environnement de travail">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== COMPÉTENCES ========== -->
+        <section id="skills" class="section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Compétences Techniques</h2>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Frontend & Mobile</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">HTML5</span>
+                            <span class="skill-item">CSS3</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">TypeScript</span>
+                            <span class="skill-item">Next.js</span>
+                            <span class="skill-item">Tailwind</span>
+                            <span class="skill-item">Flutter</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Backend & Data</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">FastAPI</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">C</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <!-- <span class="skill-item">MongoDB</span> -->
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Outils & DevOps</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Git/GitHub</span>
+                            <!-- <span class="skill-item">Docker</span> -->
+                            <span class="skill-item">Linux</span>
+                            <!-- <span class="skill-item">ESLint</span> -->
+                            <span class="skill-item">LaTeX</span>
+                            <span class="skill-item">Vercel</span>
+                            <!-- <span class="skill-item">CI/CD</span> -->
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>En Apprentissage</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">DevOps</span>
+                            <span class="skill-item">Automatisation</span>
+                            <span class="skill-item">Data Science</span>
+                            <span class="skill-item">ML</span>
+                            <span class="skill-item">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Parlons Ensemble</h2>
+                </div>
+
+                <form id="contactForm"  class="contact-form" action="send-mail.php" method="POST"> 
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Raison de votre contact">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+                    </div>
+
+                    <div class="form-status" id="formStatus"></div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <p style="color: var(--color-black); font-weight: 500; margin-bottom: 1.5rem;">Retrouvez-moi sur :</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Chris-Manuelpipo/" class="social-link" title="GitHub" target="_blank">
+                            <img src="images/github.png" alt="GitHub">
+                        </a>
+                        <a href="https://linkedin.com/in/chris-etchome" class="social-link" title="LinkedIn" target="_blank">
+                            <img src="images/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:etchomechris2000@gmail.com" class="social-link" title="Email">
+                            <img src="images/email.png" alt="Email">
+                        </a>
+                        <a href="https://wa.me/237654804907" class="social-link" title="WhatsApp">
+                            <img src="images/whatsapp.png" alt="Icône WhatsApp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; 2026 — Chris Manuel. Tous droits réservés.</p>
+        <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.7;">
+            Conçu & développé avec passion | <a class="btn-primary" href="docs/cv.pdf" download="CV-Chris-Manuel.pdf">Télécharger CV</a>
+
+        </p>
+    </footer>
+ 
+</body>
+</html>
