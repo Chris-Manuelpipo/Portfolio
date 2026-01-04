@@ -1,7 +1,10 @@
 <?php
+header('Content-Type: application/json; charset=UTF-8');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    exit('Méthode non autorisée');
+    echo json_encode(['success' => false, 'message' => 'Méthode non autorisée']);
+    exit;
 }
 
 $name    = trim($_POST['name'] ?? '');
@@ -11,15 +14,27 @@ $message = trim($_POST['message'] ?? '');
 
 if ($name === '' || $email === '' || $subject === '' || $message === '') {
     http_response_code(400);
-    exit('Champs manquants');
+    echo json_encode(['success' => false, 'message' => 'Champs manquants']);
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Email invalide']);
+    exit;
 }
 
 $to = "etchomechris2000@gmail.com";
 
-$headers  = "From: $name <$email>\r\n";
+$headers  = "From: \"$name\" <$email>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $body = "Nom : $name\nEmail : $email\nSujet : $subject\n\nMessage :\n$message";
 
-echo mail($to, $subject, $body, $headers) ? "OK" : "ERROR";
+$sent = mail($to, $subject, $body, $headers);
+
+echo json_encode([
+    'success' => $sent,
+    'message' => $sent ? 'Message envoyé' : 'Erreur lors de l’envoi'
+]);

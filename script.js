@@ -52,47 +52,51 @@ updateActiveNav();
 // ============================================
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
-
+ 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    const name    = document.getElementById('name').value; 
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    if (!name || !email || !subject || !message) {
+    if (!name  || !subject || !message) {
         showStatus('Veuillez remplir tous les champs', 'error');
         return;
     }
 
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('subject', subject);
-    formData.append('message', message);
+    // Numéro WhatsApp au format international (sans + ni espaces)
+    const phone = "237654804907";
 
-    fetch('send-mail.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            showStatus('✅ Message envoyé avec succès! Merci de m\'avoir contacté.', 'success');
-            contactForm.reset();
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 4000);
-        } else {
-            showStatus('❌ Erreur lors de l\'envoi. ' + (data.message || 'Veuillez réessayer.'), 'error');
-        }
-    })
-    .catch(error => {
-        showStatus('❌ Erreur réseau. Vérifiez votre connexion.', 'error');
-        console.error('Erreur:', error);
-    });
+    const text = `
+        Bonjour M. Chris ETCHOME,
+
+        Je me nomme ${name}.
+        Je vous contacte au sujet de : ${subject}.
+
+        Message :
+        ${message}
+
+        — Contact envoyé depuis votre Portfolio
+    `;
+
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+    showStatus('💬 Redirection vers WhatsApp…', 'success');
+
+    // Ouvre WhatsApp (mobile ou WhatsApp Web)
+    setTimeout(() => {
+    // mémorise qu’un message a déjà été affiché
+    sessionStorage.setItem('contactStatusShown', '1');
+
+    window.open(url, "_blank");
+
+    // vider le formulaire
+    contactForm.reset();
+    }, 1500);
 });
+
 
 function showStatus(message, type) {
     formStatus.textContent = message;
@@ -139,4 +143,11 @@ themeToggle.addEventListener('click', () => {
     
     // Sauvegarder la préférence
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+});
+
+window.addEventListener('load', () => {
+    if (sessionStorage.getItem('contactStatusShown')) {
+        formStatus.style.display = 'none';
+        sessionStorage.removeItem('contactStatusShown');
+    }
 });
