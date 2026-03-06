@@ -124,6 +124,14 @@ a:hover {
     color: var(--color-black);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-beige);
+    outline-offset: 2px;
+}
+
 /* ============================================
    NAVIGATION
    ============================================ */

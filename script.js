@@ -57,10 +57,11 @@ contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name    = document.getElementById('name').value; 
+    const email   = document.getElementById('email').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    if (!name  || !subject || !message) {
+    if (!name || !email || !subject || !message) {
         showStatus('Veuillez remplir tous les champs', 'error');
         return;
     }
@@ -72,6 +73,7 @@ contactForm.addEventListener('submit', (e) => {
         Bonjour M. Chris ETCHOME,
 
         Je me nomme ${name}.
+        Mon email : ${email}.
         Je vous contacte au sujet de : ${subject}.
 
         Message :
